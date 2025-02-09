@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+
+<style>
+
+</style>
+
+<body>
+  <div class="container">
+    <p class="text">Calculator</p>
+    <button class="theme js-theme-toggle"><img class="theme-toggle" src="images/mode-icon.png"></button>
+    <input type="text" placeholder="0" class="display js-display" autofocus="|">
+    <div class="js-result result"></div>
+
+    <div class="buttons">
+      <button class="operator clear" onclick="
+      calculation = '';
+      displaycalculate();
+      localStorage.removeItem('calculation');
+    ">C</button>
+
+      <button class="operator" onclick="
+      deleteDigit();
+    "><img class="delete-icon" src="images/delete-icon.png"></button>
+
+      <button class="js-percent operator percent" onclick="
+      percentage();
+    ">%</button>
+
+      <button class="operator" onclick="
+      incrementCalculation('/');
+      "><img class="divide-icon" src="images/divide-icon.png"></button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('7');
+      ">7</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('8');
+      ">8</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('9');
+      ">9</button>
+
+      <button class="operator" onclick="
+      incrementCalculation('*');
+      "><img class="multiply-icon" src="images/multiply-icon.png"></button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('4');
+    ">4</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('5');
+    ">5</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('6');
+    ">6</button>
+
+      <button class="operator minus" onclick="
+      incrementCalculation('-');
+    ">-</button>
+
+
+      <button class="calculator-button" onclick="
+    incrementCalculation('1');
+    ">1</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('2');
+    ">2</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('3');
+    ">3</button>
+
+      <button class="operator plus" onclick="
+      incrementCalculation('+');
+      ">+</button>
+
+      <button class="js-enlarge" onclick="
+      enlarge();
+    ">S</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('0');
+    ">0</button>
+
+      <button class="calculator-button" onclick="
+      incrementCalculation('.');
+    ">.</button>
+
+      <button class="equal" onclick="
+      calculation = eval(calculation);
+      displaycalculate();
+      localStorage.setItem('calculation', calculation);
+    ">=</button>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+
+</html>
